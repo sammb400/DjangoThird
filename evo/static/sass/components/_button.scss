@@ -1,0 +1,109 @@
+.btn {
+    &,//This allows it to get applied to all buttons
+    &:link,
+    &:visited {//a pseodo class is a special state of a selector ie it helps style certain parts of an element
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.5rem 4rem;
+        display: inline-block;//gives space to elements
+        border-radius: 10rem;
+        transition: all .2s;
+        position: relative;
+        font-size: $default-font-size;
+        margin-bottom: 1rem;
+
+        
+        //changes for the <button> element
+        border: none;
+        cursor: pointer;
+        
+    }
+     &::after {
+         content: "";
+         display: inline-block;
+         height: 100%;
+         width: 100%;
+         border-radius: 100px;
+         /*puts the curve on the button*/
+         position: absolute;
+         /*will put the buttoon behind another button*/
+         top: 0;
+         left: 0;
+         z-index: -1;
+         /*defines the position of an element when there is one ontop of another*/
+         transition: all .4s;
+     }
+
+    &:hover {
+
+        transform: translateY(-3px);
+        box-shadow: .5rem .5rem rgba(0,0,0, .2);
+
+        &::after {
+            transform: scalex(1.4) scaleY(1.6);
+            -webkit-opacity: 0;
+            opacity: 0;
+        }
+    }
+
+    &:active,
+     &:focus {//includes focus to act like hover
+        outline: none;//removes border from button
+        transform: translateY(-1px);
+        box-shadow: 0.5rem .2rem rgba(0,0,0, .2);
+    }
+
+    &--white {
+        background-color: $color-white;
+        color: $color-grey-dark;
+
+        &::after {
+            background-color: $color-white;
+        }
+
+    }
+
+    &--green {
+        background-color: $color-primary;
+        color: $color-white;
+
+        &::after {
+            background-color: $color-primary;
+        }
+
+    }
+
+   
+
+    &--animated {
+
+        animation: moveInBottom .5s ease-out .75s;
+        animation-fill-mode: backwards;
+        /*animation will be invisible first*/
+    }
+}
+.btn-text {
+    &:link,
+    &:visited{
+        color: $color-primary;
+        display: inline-block;
+        text-decoration: none;
+        border-bottom: 1px solid $color-primary;
+        padding: 3px;
+        font-size: $default-font-size;
+        transform: all .2s;
+    }
+    &:hover{
+        background-color: $color-primary;
+        color: $color-white;
+        box-shadow: 0 1rem 2rem rgba($color-black, .15);
+        transform: translateY(-2px);
+    }
+    &:active{
+        box-shadow: 0 1rem 2rem rgba($color-black, .15);
+        transform: translateY(0);
+    }
+}
+.btn-q {
+    margin-top: 2rem;
+}

@@ -1,0 +1,161 @@
+*,
+*::after,
+*::before {
+  /*include before pseudo elements*/
+  margin: 0;
+  padding: 0;
+  /*This is to refresh the page and remove any preexisting code*/
+  box-sizing: inherit;
+  /*forces inheritance on whole page */ }
+
+html {
+  font-size: 10px; }
+
+body {
+  /*some font elements are stated here*/
+  font-family: sans-serif;
+  font-weight: 400;
+  font-size: 100%;
+  /*allows user to change font size*/
+  line-height: 1.7;
+  /*means line height is 1.7 times bigger than the normal*/
+  color: #777;
+  padding: 3rem;
+  box-sizing: border-box;
+  /*This is to set the box model so that the borders and the paddings are no longer added to the total
+     height or width spesified for a box*/ }
+
+.header {
+  /*Here we format the header element and the . selector is used to show the class, class selector*/
+  height: 95vh;
+  /*this says that the image is to cover 95% of the display*/
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url(../img/lamborghini.jpg);
+  /*background image url is for the image and to right bottom where the fading should face*/
+  background-size: cover;
+  /*states how much space is supposed to be occupied*/
+  background-position: top;
+  /*adjusts position of the image in question */
+  position: relative;
+  /*assists the logo bellow, is the reference to the logo bellow*/
+  clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+  /*cuts ratiolly in the shape you want. check out bennettfeely.com/clippy/*/ }
+
+.logo-box {
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+  /*logo-box class, define attributes of logo box, position attributes*/ }
+
+.logo {
+  height: 8rem;
+  /*logo class, defines attributes of the logo itself*/ }
+
+.logo:hover {
+  animation: moveInRight 1s ease-out; }
+
+.text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /*the above is in relation to the parent element*/
+  text-align: center; }
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 6rem; }
+
+.heading-primary-main {
+  display: block;
+  font-size: 6rem;
+  font-weight: 700;
+  letter-spacing: 3.5rem;
+  /*animation delay and iteration count*/
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out; }
+
+.heading-primary-sub {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.5rem;
+  animation: moveInRight 1s ease-out; }
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px); }
+  80% {
+    transform: translateX(10px); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px); }
+  80% {
+    transform: translateX(-10px); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all .2;
+  position: relative;
+  font-size: 1.6rem; }
+
+.btn:hover {
+  transform: translateY(-3px); }
+
+.btn:active {
+  transform: translateY(-1px); }
+
+.btn-white {
+  background-color: #fff;
+  color: #777; }
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  /*putes the curve on the button*/
+  position: absolute;
+  /*will put the buttoon behind another button*/
+  top: 0;
+  left: 0;
+  z-index: -1;
+  /*defines the position of an element when there is one ontop of another*/
+  transition: all .4; }
+
+.btn-white::after {
+  background-color: #fff; }
+
+.btn:hover::after {
+  transform: scalex(1.4) scaleY(1.6);
+  opacity: 0; }
+
+.btn-animated {
+  animation: moveInBottom .5s ease-out .75s;
+  animation-fill-mode: backwards;
+  /*animation will be invisible first*/ }

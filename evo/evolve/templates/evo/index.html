@@ -1,0 +1,727 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--website rendered with width of device -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="https:fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+
+   <link rel="stylesheet" href=" {% static 'csss/icon-font.css' %} ">
+    <link rel="stylesheet" href=" {% static 'csss/styles.css' %} ">
+    <link rel="shortcut icon" type="image/png" href=" {% static 'img/icons8-home-9689.png' %} ">
+
+
+    <title>Evolve</title>
+
+
+</head>
+
+<body>
+    <!--navigation-->
+    <div class="navigation">
+        <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+
+        <label for="navi-toggle" class="navigation__button">
+            <span class="navigation__icon">&nbsp;</span>
+        </label>
+
+        <div class="navigation__background">&nbsp;</div>
+        <nav class="navigation__nav">
+            <ul class="navigation__list">
+                <li class="navigation__item"><a href="#section-about" class="navigation__link"><span>01</span>About Evolve</a></li>
+                <li class="navigation__item"><a href="#section-features" class="navigation__link"><span>02</span>Free Services Offered</a></li>
+                <li class="navigation__item"><a href="#section-tours" class="navigation__link"><span>03</span>Services we Offered</a></li>
+                <li class="navigation__item"><a href="#section-stories" class="navigation__link"><span>04</span>Comments</a></li>
+                <li class="navigation__item"><a href="#section-book" class="navigation__link"><span>05</span>Join Our Community</a></li>
+            </ul>
+            
+        </nav>
+    </div>
+
+
+
+    <header class="header">
+        <!--we are using the header class because we want a class name in each element-->
+        <div class="header__logo-box"><!--inline element-->
+            <img src=" {% static 'img/logo.jpg' %} " alt="logo" class="header__logo" /><!--alt also describes image-->  
+        </div>
+        <div class="header__text-box"><!--a class is useed to put something in a container-->
+             <h1 class="heading-primary">
+            <span class="heading-primary-main">Evolve Logistics ltd.</span><!--a span element is used to style some text differently-->
+            <span class="heading-primary-sub">your contract logistics partner</span>
+        </h1>
+
+        <a href="#section-about" class="btn btn--white btn--animated">Learn about us</a>
+        </div>
+        
+    </header>
+    <main>
+
+        <!-- About Section-->
+        <section class="section-about" id="section-about">
+            <div class="u-center-text u-margin-bottom-big">
+                <h2 class="heading-secondary">
+                    About Evolve
+                 </h2>
+            </div>
+            <div class="row">
+                
+                <div class="col-2-of-4">
+                    <p class="paragraph">
+                        International trade has seen major change in recent years; in the past, logistics
+                                 involved simply moving goods from one place to another. Today, the market demands
+                                  comprehensive services and specific logistics processes, making Contract Logistics
+                                   the ideal solution for companies wishing to monitor and manage their operations.
+                    </p>
+                      
+                    <p class="paragraph">
+                        At Evolve logistics limited we distinguish ourselves by providing world class CONTRACT
+                                 LOGISTICS – comprehensive course of action that merges traditional logistics with
+                                  supply chain management processes effectively promoting and delivering freight
+                                   forwarding, handling and customsclearance services from service points in Nairobi,
+                                    Mombasa, Kampala, Juba, Dar es Salaam and Kigali among others cities in Eastern
+                                     and Central Africa countries through Air Freight, Sea Freight, Rail Freight and Road Transport.
+                    </p>
+                    <a href="#section-book" class="btn-text">Join Us &rarr;</a>
+
+                </div>
+                <div class="col-2-of-4">
+                    <div class="composition">
+                            <img srcset= "{% static 'img/logtrain.png' %} 300w, {% static 'img/logtrain.png' %} 900w"
+                                 size= "(max-width: 900px) 20vw, (max-width: 600px) 30vw"
+                                 alt="Photo 1"
+                                 class="composition__photo composition__photo--p1"
+                                 src=" {% static 'img/logtrain.png' %} " >
+                            <img srcset= "{% static 'img/index8.png' %} 300w, {% static 'img/index8.png' %} 900w"
+                                 size= "(max-width: 900px) 20vw, (max-width: 600px) 30vw"
+                                 alt="Photo 2"
+                                 class="composition__photo composition__photo--p2"
+                                 src=" {% static 'img/index8.png' %} " >
+                            <img srcset= "{% static 'img/air.JPG' %} 300w, {% static 'img/air.JPG' %}  900w"
+                                 size= "(max-width: 900px) 20vw, (max-width: 600px) 30vw"
+                                 alt="Photo 3"
+                                 class="composition__photo composition__photo--p3"
+                                 src=" {% static 'img/air.JPG' %}  " >
+                            <img srcset= "{% static 'img/ship.jpg' %}  300w, {% static 'img/ship.jpg' %}   900w"
+                                 size= "(max-width: 900px) 20vw, (max-width: 600px) 30vw"
+                                 alt="Photo 4"
+                                 class="composition__photo composition__photo--p4"
+                                 src=" {% static 'img/ship.jpg' %}  " >
+                            <img srcset= "{% static 'img/competition.png' %} 300w, {% static 'img/competition.png' %}   900w"
+                                 size= "(max-width: 900px) 20vw, (max-width: 600px) 30vw"
+                                 alt="Photo 5"
+                                 class="composition__photo composition__photo--p5"
+                                 src=" {% static 'img/competition.png' %}  " >        
+                    </div> 
+                </div>
+            </div>  
+           
+        </section>
+
+        <!-- Features section-->
+        <section class="section-features" id="section-features">
+            
+            <div class="row">
+                <div class="col-1-of-4">
+                    <div class="feature-box">
+                        <i class="feature-box__icon icon-basic-world"></i>
+                        <h3 class="heading-tertiary u-margin-bottom-small">get a free quote !</h3>
+                        <p class="feature-box__text"> 
+                             Get a free quote for all your logistics needs.
+                            </p>
+                            <a href="#" class="btn-text btn-q">Start a Quote &rarr;</a>
+                    </div>
+                  
+                </div>
+                 <div class="col-1-of-4">
+                    <div class="feature-box">
+                        <i class="feature-box__icon icon-basic-compass"></i>
+                        <h3 class="heading-tertiary u-margin-bottom-small">Contract Logistics & Warehousing</h3>
+                        <p class="feature-box__text"> 
+                             Contract Logistics is defined as the comprehensive logistics process from production to distribution.
+                            </p>
+                            <a href="#" class="btn-text btn-q">Get Estimate &rarr;</a>
+                    </div>
+                  
+                </div>
+                 <div class="col-1-of-4">
+                    <div class="feature-box">
+                        <i class="feature-box__icon icon-basic-map"></i>
+                        <h3 class="heading-tertiary u-margin-bottom-small">Shipment Tracking</h3>
+                        <p class="feature-box__text"> 
+                             Track your Shipment instantly!
+                            </p>
+                            <a href="#" class="btn-text btn-q">Find Your Cargo &rarr;</a>
+                    </div>
+                  
+                </div>
+                 <div class="col-1-of-4">
+                    <div class="feature-box">
+                        <i class="feature-box__icon icon-basic-heart"></i>
+                        <h3 class="heading-tertiary u-margin-bottom-small">Have a Question ?</h3>
+                        <p class="feature-box__text"> 
+                             We are happy to answer all your questions.
+                            </p>
+                            <a href ="#" class="btn-text btn-q">Contact Us &rarr;</a>
+                    </div>
+                  
+                </div>
+            </div>
+        </section>
+
+        <!--Tours section-->
+        <section class="section-tours" id="section-tours">
+
+             <div class="u-center-text u-margin-bottom-big">
+                <h2 class="heading-secondary">
+                    Services we offer !
+                 </h2>
+            </div>
+            <div class="row">
+
+                <div class="col-1-of-3">
+                    <div class="card">
+                        <div class="card__side card__side--front">
+                            <div class="card__picture card__picture--1"></div>
+                                <h4 class="card__heading">
+                                    <span class="card__heading-span card__heading-span--1">Air Freight</span>
+                                </h4>
+                            <div class="card__details">
+                                <ul>
+                                    <li>Fast and Reliable</li>
+                                    <li>Best Tracking</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card__side card__side--back card__side--back-1">
+                                <div class="card__cta">
+                                    <div class="card__price-box">
+                                        <p class="card__price-only">learn more about</p>
+                                        <p class="card__price-value">Air Freight</p>
+                                    </div>
+                                    <a href="#popup" class="btn btn--white">Here</a><!--directed to the target/anchor-->
+                                </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-1-of-3">
+                     <div class="card">
+                        <div class="card__side card__side--front">
+                            <div class="card__picture card__picture--2"></div>
+                                <h4 class="card__heading">
+                                    <span class="card__heading-span card__heading-span--2">logistics & werehousing</span>
+                                </h4>
+                            <div class="card__details">
+                                <ul>
+                                    <li>Safe storage</li>
+                                    <li>Timely Updates</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card__side card__side--back card__side--back-2">
+                                <div class="card__cta">
+                                    <div class="card__price-box">
+                                        <p class="card__price-only">learn more about</p>
+                                        <p class="card__price-value">our storage </p>
+                                    </div>
+                                    <a href="#popup1" class="btn btn--white">Here</a><!--directed to the target/anchor-->
+                                </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-1-of-3">
+                     <div class="card">
+                        <div class="card__side card__side--front">
+                            <div class="card__picture card__picture--3"></div>
+                                <h4 class="card__heading">
+                                    <span class="card__heading-span card__heading-span--3">Rail Freight</span>
+                                </h4>
+                            <div class="card__details">
+                                <ul>
+                                    <li>Transport of bulky goods</li>
+                                    <li>and none bulky goods</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card__side card__side--back card__side--back-3">
+                                <div class="card__cta">
+                                    <div class="card__price-box">
+                                        <p class="card__price-only">learn more about</p>
+                                        <p class="card__price-value">Rail Freight</p>
+                                    </div>
+                                    <a href="#popup2" class="btn btn--white">Here</a><!--directed to the target/anchor-->
+                                </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div class="row">
+            <div class="col-1-of-2">
+                    <div class="card">
+                        <div class="card__side card__side--front">
+                            <div class="card__picture card__picture--4"></div>
+                                <h4 class="card__heading">
+                                    <span class="card__heading-span card__heading-span--4">Road Freight</span>
+                                </h4>
+                            <div class="card__details">
+                                <ul>
+                                    <li>We have the best trucks for transport</li>
+                                    <li>We offer containers</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card__side card__side--back card__side--back-2">
+                                <div class="card__cta">
+                                    <div class="card__price-box">
+                                        <p class="card__price-only">learn more about</p>
+                                        <p class="card__price-value">Road Freight</p>
+                                    </div>
+                                    <a href="#popup3" class="btn btn--white">Here</a><!--directed to the target/anchor-->
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1-of-2">
+                    <div class="card">
+                        <div class="card__side card__side--front">
+                            <div class="card__picture card__picture--5"></div>
+                                <h4 class="card__heading">
+                                    <span class="card__heading-span card__heading-span--5">Sea Freight</span>
+                                </h4>
+                            <div class="card__details">
+                                <ul>
+                                    <li>Best shipping services </li>
+                                    <li>You acn track what you ship</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card__side card__side--back card__side--back-2">
+                                <div class="card__cta">
+                                    <div class="card__price-box">
+                                        <p class="card__price-only">learn more about</p>
+                                        <p class="card__price-value">Sea Freight</p>
+                                    </div>
+                                    <a href="#popup4" class="btn btn--white">Here</a><!--directed to the target/anchor-->
+                                </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        
+        <div class="u-center-text u-margin-top-huge">
+                <a href="#section-about" class="btn btn--green">Learn about us</a>
+            </div>
+
+        </section>
+
+
+       
+        <!--Story section-->
+        <section class="section-stories" id="section-stories">
+
+            <!--video-->
+            <div class="bg-video">
+                <video class="bg-video__content" autoplay muted loop>
+                    <source src=" {% static 'img/storage.mp4' %} " type="video/mp4">
+                    Your video
+                </video>
+            </div>
+
+            <!--back to story section-->
+            <div class="u-center-text u-margin-bottom-big">
+                <h2 class="heading-secondary ">
+                    This is what our customers say
+                 </h2>
+            </div>
+
+
+            <div class="row">
+                <div class="story">
+                    <figure class="story__shape">
+                        <img src=" {% static 'img/dp.jpg' %} " alt="Person with benz" class="story__img">
+                        <figcaption class="story__caption">SamM 400</figcaption>
+                    </figure>
+                <div class="story__text">
+                    <h3 class="heading-tertiary">Best services and tracking of goods i have ever experienced.</h3>
+                    <p>Best services and tracking of goods i have ever experienced. It was an honour for our goods to be taken care of like that. Deliveries are timely and the goods are always in the best condition.</p> 
+                    
+                </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="story">
+                    <figure class="story__shape">
+                        <img src=" {% static 'img/dp2.jpg' %} " alt="Person with benz" class="story__img">
+                        <figcaption class="story__caption">Kim Nati</figcaption>
+                    </figure>
+                <div class="story__text">
+                    <h3 class="heading-tertiary">It was great having them handle my good.</h3>
+                    <p>It was great having them handle my good. I can't fault them in a single thing.Best services and tracking of goods i have ever experienced. It was an honour for our goods to be taken care of like that.</p> 
+                    
+                </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="story">
+                    <figure class="story__shape">
+                        <img src=" {% static 'img/dp3.jpg' %} " alt="Person with benz" class="story__img story__img--1">
+                        <figcaption class="story__caption">Stacy</figcaption>
+                    </figure>
+                <div class="story__text">
+                    <h3 class="heading-tertiary">Evolve logistics solved this issue by being startegically placed.</h3>
+                    <p>We had trouble finding ample storage space while goods were in transshipment. Evolve logistics solved this issue by being startegically placed.</p>                    
+                </div>
+                </div>
+            </div>
+            
+             <div class="u-center-text u-margin-top-big">
+                <a href="#" class="btn btn--green">See more stories &rarr;</a>
+            </div>
+           
+            
+        </section>
+        
+        <!--booking a test drive-->
+        <section class="section-book" id="section-book">
+            <!--Name and Email-->
+            <div class="row">
+                <div class="book">
+                    <div class="book__form">
+                        <form action="#" class="form">
+
+                               <div class="u-margin-bottom-meddium">
+                                    <h2 class="heading-secondary">
+                                        Join our community 
+                                    </h2>
+                                </div>
+
+                            <div class="form__group">
+                                <input type="text" class="form__input" placeholder="Name Of Customer" id="Name" required>
+                                <label for="Name" class="form__label">Name Of Customer</label>
+                            </div>
+
+                              <div class="form__group">
+                                <input type="email" class="form__input" placeholder="Email Address" id="email" required>
+                                <label for="email" class="form__label">Email Address</label>
+                            </div>
+                            <!--Radio buttons-->
+                            <div class="form__group u-margin-bottom-medium">
+
+                                <div class="form__radio-group">
+                                    <input type="radio" class="form__radio-input" id="small" name="size"><!--The name makes the radio buttons not to get clicked at the same time-->
+                                    <label for="small" class="form__radio-label">
+                                        <span class="form__radio-button"></span><!--This is included because you can't style a radio button in css, so we use the label span and make the input invisible-->
+                                        Import</label>
+                                </div>
+
+                                 <div class="form__radio-group">
+                                    <input type="radio" class="form__radio-input" id="large" name="size">
+                                    <label for="large" class="form__radio-label">
+                                        <span class="form__radio-button"></span>
+                                        Export</label>
+                                </div>
+
+                            </div>
+                            <div class="form__group">
+                                <button class="btn btn--green">Next Step &rarr;</button><!--Here we need a real button element because it will help us submit something-->
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer class="footer">
+        <!--art direction - is used to put more than 1 photo in the same place in accordance with resolution-->
+        <div class="footer__logo-box">
+            <picture class="footer__logo">
+                <source srcset="{% static 'img/logo.jpg' %} 1x, {% static 'img/logo.jpg' %} 2x" media="(max-width: 37em)" >
+                    <img srcset="{% static 'img/logo.jpg' %} 1x, {% static 'img/logo.jpg' %} 2x" alt="full logo" class="footer__logo"
+                    src=" {% static 'img/logo.jpg' %} "
+                    ><!--second src is just incase browser doesn't support -->
+
+            </picture>
+            
+        </div>
+        <div class="row">
+            <div class="col-1-of-2">
+                <div class="footer__navigation">
+                    <h4 class="footer__heading">Our Services</h4>
+                    <ul class="footer__list">
+                        <li class="footer__item"><a href="#" class="footer__link">Air Freight</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Sea Freight</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Road Freight</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Rail Freight</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Custom Brokerage</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Contact Logistics & Warehousing</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Supply Chain Management</a></li>
+                    </ul>
+
+                    <h4 class="footer__heading">Where we are located</h4>
+                    <ul class="footer__list">
+                        <li class="footer__item1"><a href="#" class="footer__link">Evolve Logistics</a></li>
+                        <li class="footer__item1"><a href="#" class="footer__link">Bellway Industrial Park</a></li>
+                        <li class="footer__item1"><a href="#" class="footer__link">Embakasi Road off Airport North Road</a></li>
+                        <li class="footer__item1"><a href="#" class="footer__link">Phone: +254 724 383 856 </a></li>
+                        <li class="footer__item1"><a href="#" class="footer__link">info@evolvelogistics.net</a></li>
+                    </ul>
+                    
+                </div>
+
+            </div>
+            <div class="col-1-of-2">
+                    <p class="footer__copyright">
+                        At <a href="" class="footer__link">Evolve Logistics</a> At Evolve Logistics Limited we distinguish ourselves by providing world-class <a href="#" class="footer__link">Contract Logistics</a> – comprehensive course of action that merges traditional logistics with supply chain management processes to effectively promote and deliver freight. <br> Copyright &copy; by Samuel Mwai. You are not allowed to steal any of this code. I see you!
+                    </p> 
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--Popup-->
+    <div class="pop">
+
+
+        <div class="popup" id="popup"><!--id here is being used as the anchor taking you to the required target-->
+            <div class="popup__content">
+                <div class="popup__left">
+                    <img src=" {% static 'img/shipun.jpg' %} " alt="Tour photo" class="popup__img">
+                    <img src=" {% static ' img/shipun1.webp' %}" alt="Tour photo" class="popup__img">
+                </div>
+                <div class="popup__right">
+                    <a href="#section-tours" class="popup__close">&times;</a><!--the times puts an x-->
+                    <h2 class="heading-secondary u-margin-bottom-tiny">Air Freight</h2>
+                
+                    <p class="popup__text">
+                        EVOLVE LOGISTICS LIMITED is a reliable Freight Forwarding & Consolidation Company handling Air cargo from all Major destinations worldwide & across Africa. We have partnered with industry leading airlines to ensure best services in market with the most competitive prices on direct & in-direct airlines.
+                        With specialization for handling Airfreight, Evolve Logistics LTD helps customers by advising them as professional to choose air options for proper handling of valued cargo at best options to avoid any unexpected loss, and damages during transit or demurrages at airports and late delivery’s.
+                        EVOLVE LOGISTICS LIMITED has facility to provide Quality Check Services to ensure the goods are packed properly as per the guidelines by customers for safe movement.
+
+                    </p>
+                    <a href="#" class="btn btn--green">Join Us</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup" id="popup1"><!--id here is being used as the anchor taking you to the required target-->
+            <div class="popup__content">
+                <div class="popup__left">
+                    <img src=" {% static 'img/stor.jpg' %} " alt="Tour photo" class="popup__img">
+                    <img src=" {% static 'img/index4.png' %} " alt="Tour photo" class="popup__img">
+                    <img src=" {% static 'img/index8.png' %} " alt="Tour photo" class="popup__img">
+                </div>
+                <div class="popup__right">
+                    <a href="#section-tours" class="popup__close">&times;</a><!--the times puts an x-->
+                    <h2 class="heading-secondary u-margin-bottom-tiny"> Warehousing </h2>
+
+                    <p class="popup__paragraph">Contract Logistics is defined as the comprehensive process from production to distribution at the final point of sale. This means that contract logistics offered at Evolve Logistics Limited is not simply the process of moving goods, but a far more comprehensive course of action that merges traditional logistics with supply chain management processes
+
+                    </p>
+                    <h3 class="heading-tertiary">
+                        Main Services
+                    </h3>  
+                    <p class="popup__text">
+                    At EVOLVE LOGISTICS LIMITED we have identified the key services necessary for the supply chain to be executed from start to finish, using the necessary infrastructure throughout the process
+                    </p>
+                    <ul class="popup__list">
+                        <li class="popup__item1"><a href="#" class="popup__link">Evolve Logistics</a></li>
+                        <li class="popup__item1"><a href="#" class="popup__link">Bellway Industrial Park</a></li>
+                        <li class="popup__item1"><a href="#" class="popup__link">Embakasi Road off Airport North Road</a></li>
+                        <li class="popup__item1"><a href="#" class="popup__link">Phone: +254 724 383 856 </a></li>
+                        <li class="popup__item1"><a href="#" class="popup__link">info@evolvelogistics.net</a></li>
+                    </ul>
+                    <h3 class="heading-tertiary">
+                        Added-Value Services
+                    </h3>        
+                    <p class="popup__text">  
+                    These are services Evolve Logistics offers to round out the value chain. This, however, does not mean they are less important than the main services.</p>                              
+                    <ul class="popup__list">
+                        <li class="popup__item1"><a href="#" class="popup__link">Consulting and Customs Clearance</a></li>
+                        <li class="popup__item1"><a href="#" class="popup__link">Insurance on Goods</a></li>
+                        <li class="popup__item1"><a href="#" class="popup__link">Quality Management</a></li>
+                    </ul> 
+                    <a href="#" class="btn btn--green">Join Us</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup" id="popup2"><!--id here is being used as the anchor taking you to the required target-->
+            <div class="popup__content">
+                <div class="popup__left">
+                    <img src=" {% static 'img/railun1.jpg' %} " alt="Tour photo" class="popup__img">
+                    <img src=" {% static 'img/railun.jpg' %} " alt="Tour photo" class="popup__img">
+                </div>
+                <div class="popup__right">
+                    <a href="#section-tours" class="popup__close">&times;</a><!--the times puts an x-->
+                    <h2 class="heading-secondary u-margin-bottom-tiny">Rail Freight</h2>
+                    
+                    <p class="popup__text">
+                        We use the most efficient and competitively priced methods to transport your goods over land – EVOLVE LOGISTICS LIMITED saves you money, time and client goodwill. We have maintained a good working relation with SGR – Standard gauge railway, which ensures efficient and affordable transportation of cargo through railway mode.
+                        Our experience in handling rail shipments enables us to offer our customers comprehensive rail freight solutions.
+                        Our standard gage rail (SGR) provides safe, reliable and environmentally sound transport as part of the multimodal freight services we bank on to offer you the very best.
+                    </p>
+                    <a href="#" class="btn btn--green">Join Us</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup" id="popup3"><!--id here is being used as the anchor taking you to the required target-->
+            <div class="popup__content">
+                <div class="popup__left">
+                    <img src=" {% static 'img/truckun1.jpg' %} " alt="Tour photo" class="popup__img">
+                    <img src=" {% static 'img/truckun.webp' %} " alt="Tour photo" class="popup__img">
+                </div>
+                <div class="popup__right">
+                    <a href="#section-tours" class="popup__close">&times;</a><!--the times puts an x-->
+                    <h2 class="heading-secondary u-margin-bottom-tiny">Road Freight</h2>
+                    <p class="popup__text">
+                        With focus on reducing costs by optimizing your cargo flow, EVOLVE LOGISTICS LIMITED offers flexible road freight services customized to meet the needs of international groupage, part- load and full-load shipments by road and intermodal.
+                        Our Land Transportation division is able to provide you either a bespoke solution for your requirements or on an integrated solution covering from point of loading to point of delivery complete with electronic proof of delivery services.
+                        Our team comprises of experienced transport professionals who know how to best fit solutions for any transportation requirements that work for you.
+
+                    </p>
+                    <a href="#" class="btn btn--green">join us</a>
+                </div>
+            </div>
+        </div>
+
+         <div class="popup" id="popup4"><!--id here is being used as the anchor taking you to the required target-->
+            <div class="popup__content">
+                <div class="popup__left">
+                    <img src=" {% static 'img/planeun.jpg' %} " alt="Tour photo" class="popup__img">
+                    <img src=" {% static 'img/ship.jpg' %} " alt="Tour photo" class="popup__img">
+                    <img src=" {% static 'img/ship2.jpg' %} " alt="Tour photo" class="popup__img">
+                </div>
+                <div class="popup__right">
+                    <a href="#section-tours" class="popup__close">&times;</a><!--the times puts an x-->
+                    <h2 class="heading-secondary u-margin-bottom-tiny">Sea Freight</h2>
+                    <p class="popup__paragraph">
+                        EVOLVE LOGISTICS LIMITED provides Full Container Load (FCL), Less Container Load (LCL), Bulk Cargo, Perishable Cargo, Oversized and Special Cargo from all major Ports in the worldwide. We have dedicated team for Sea Freight Forwarding from follow-up shipper, vessel planning & handling of all documentation work.
+                    </p>
+                    <h3 class="heading-tertiary">Full Container Load</h3>
+                    <p class="popup__text">
+                        FCL-(Full Container Load) consolidator to and from all destinations worldwide. we are able to provide the best rates and services for 20′, 40′, 40′ high cube, or any other full container load trafic to any destination in the world.
+                    </p>
+                    <h3 class="heading-tertiary">Less Than Container Load</h3>
+                    <p class="popup__text">    
+                        We are a leading Less Than Container Load (LCL) consolidator to all destinations worldwide, we pride ourselves on great customer service and competitive rates.
+                    </p>
+                    <h3 class="heading-tertiary">Door to door Feight</h3>
+                    <p class="popup__text">               
+                        Locally and internationally, we have the knowhow to safely deliver your cargo in a timely manner to any destination using a combination of efficient air, ocean and land freight shipping services
+                    </p>
+                    <a href="#" class="btn btn--green">Join Us</a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+    <section class="grid-test">
+        <div class="row">
+            <div class="col-1-of-2">
+                Col 1 of 2
+            </div>
+            <div class="col-1-of-2">
+                Col 1 of 2
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-1-of-3">
+                Col 1 of 3
+            </div>
+            <div class="col-1-of-3">
+                Col 1 of 3
+            </div>
+            <div class="col-1-of-3">
+                Col 1 of 3
+            </div>
+        </div>
+       
+        <div class="row">
+             <div class="col-1-of-3">
+                Col 1 of 3
+            </div>
+            <div class="col-2-of-3">
+                Col 2 of 3
+            </div>
+         </div>
+
+        <div class="row">
+            <div class="col-1-of-4">
+                Col 1 of 4
+            </div>
+            <div class="col-1-of-4">
+                Col 1 of 4
+            </div>
+            <div class="col-1-of-4">
+                Col 1 of 4
+            </div>
+            <div class="col-1-of-4">
+                Col 1 of 4
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-1-of-4">
+                Col 1 of 4
+            </div>
+            <div class="col-1-of-4">
+                Col 1 of 4
+            </div>
+            <div class="col-2-of-4">
+                Col 2 of 4
+            </div>
+        </div>
+            
+        <div class="row">
+            <div class="col-1-of-4">
+                Col 1 of 4
+            </div>
+            <div class="col-3-of-4">
+                Col 3 of 4
+            </div>
+        </div>
+    -->
+    </section>
+
+</body>
+<!--<img src="img/gt63s.jpg" alt="Photo 1" class="composition__photo composition__photo--p1">
+                        <img src="img/gle.jpg" alt="Photo 2" class="composition__photo composition__photo--p2">
+                        <img src="img/sclass.jpg" alt="Photo 3" class="composition__photo composition__photo--p3">-->

@@ -1,0 +1,39 @@
+@mixin clearfix{
+    &::after{
+        content: "";//content makes it present, "" makes it invisible
+        display: table;//display tells how it will be viewed and answer is inform of a table 
+        clear: both;//clear gives float permision of both left and right
+    }
+}
+@mixin posit{//puts it in the absolute center
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+//Media Query Manager
+/*
+0-600px phones
+600-900px portrait tablet
+900-1200px landscape tablet
+1200-1600px where our normal styles apply
+1800+ px big desktops
+*/
+//1em = 16px
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media only screen and (max-width: 37.5em) {@content };//600/16
+    }
+     @if $breakpoint == tab-port {
+        @media only screen and(max-width: 56.25em) {@content };//900/16
+    }
+     @if $breakpoint == tab-land {
+        @media only screen and(max-width: 75em) {@content };//1200/16
+    }
+     @if $breakpoint == big-desk {
+        @media only screen and(min-width: 112.5em) {@content };//1800/16
+    }
+}
+

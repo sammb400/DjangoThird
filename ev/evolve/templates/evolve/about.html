@@ -1,0 +1,163 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+    <link rel="stylesheet" href=" {% static 'css/style.css' %} ">
+    <link rel="shortcut icon" type="image/png" href="../img/LOGO.png">
+    <title>evolve logistics &mdash;</title>
+
+</head>
+<body>
+    <div class="container">
+     <main class="evolve-view">
+
+    
+           <header class="header">
+               <img src="../img/LOGO.png" alt="evolve logo" class="logo">
+
+               <form action="#" class="search">
+                   <input type="text" class="search__input" placeholder="Search">
+
+                   <button class="search__button">
+                       <svg class="search__icon">
+                           <use xlink:href= "../img/sprite.svg#icon-magnifying-glass"></use>
+                       </svg>
+                   </button>
+               </form>
+
+               <nav class="user-nav">
+                   <div class="user-nav__icon-box">
+                       <svg class="user-nav__icon">
+                           <use xlink:href= "../img/sprite.svg#icon-bookmark"></use>
+                       </svg>
+                       <span class="user-nav__notification">6</span>
+                   </div>
+
+                   <div class="user-nav__icon-box">
+                       <svg class="user-nav__icon">
+                           <use xlink:href= "../img/sprite.svg#icon-chat"></use>
+                       </svg>
+                       <span class="user-nav__notification">8</span>
+                   </div>
+                   
+                   <div class="user-nav__user">
+                       <img src="../img/me.jpg" alt="" class="user-nav__user-photo">
+                       <span class="user-nav__user-name">Samuel</span>
+                   </div>
+               </nav>
+            </header>
+
+
+
+           <div class="content">
+               <nav class="sidebar">
+                   <ul class="side-nav">
+                       <li class="side-nav__item  ">
+                           <a href="../index.html" class="side-nav__link">
+                           <svg class="side-nav__icon">
+                               <use xlink:href= "../img/sprite.svg#icon-home"></use>
+                           </svg>
+                           <span>Home</span>
+                           </a>
+                       </li>
+                       <li class="side-nav__item side-nav__item--active">
+                           <a href="about.html" class="side-nav__link">
+                           <svg class="side-nav__icon">
+                               <use xlink:href= "../img/sprite.svg#icon-key"></use>
+                           </svg>
+                           <span>About</span>
+                           </a>
+                       </li>
+                       <li class="side-nav__item">
+                           <a href="services.html" class="side-nav__link">
+                           <svg class="side-nav__icon">
+                               <use xlink:href= "../img/sprite.svg#icon-aircraft-take-off"></use>
+                           </svg>
+                           <span>Services</span>
+                           </a>
+                       </li>
+                       <li class="side-nav__item">
+                           <a href="contact.html" class="side-nav__link">
+                           <svg class="side-nav__icon">
+                               <use xlink:href= "../img/sprite.svg#icon-map"></use>
+                           </svg>
+                           <span>Contact us</span>
+                           </a>
+                       </li>
+                   </ul>
+
+                   <div class="legal">
+                       &copy; 2021 by Samuel. All rights reserved.
+                   </div>
+               </nav>
+
+
+
+
+            <div class="info">
+                <div class="heading">
+                    <h1 class="about-h">
+                    About Us
+                </h1>
+                </div>
+                
+
+                <figure class="gallery__about">
+                    <img src="../img/LOG2.jpg" alt="pic" class="gallery__about-1" >
+                </figure>
+
+                <div class="descript">
+                    <p class="paragraph">
+                                International trade has seen major change in recent years; in the past, logistics
+                                 involved simply moving goods from one place to another. Today, the market demands
+                                  comprehensive services and specific logistics processes, making Contract Logistics
+                                   the ideal solution for companies wishing to monitor and manage their operations.
+                    </p>
+                    <p class="paragraph">
+                                At Evolve logistics limited we distinguish ourselves by providing world class CONTRACT
+                                 LOGISTICS – comprehensive course of action that merges traditional logistics with
+                                  supply chain management processes effectively promoting and delivering freight
+                                   forwarding, handling and customsclearance services from service points in Nairobi,
+                                    Mombasa, Kampala, Juba, Dar es Salaam and Kigali among others cities in Eastern
+                                     and Central Africa countries through Air Freight, Sea Freight, Rail Freight and Road Transport.
+                    </p>
+
+                    <div class="cta">
+                            <button class="btn">
+                                <a href="index.html" class="btn__link"></a>
+                                <span class="btn__visible">Contact Us</span>
+                                <span class="btn__invisible">Your Logistics Partner</span>
+                            </button>
+                        </div>
+                </div>
+
+                
+
+                 
+               <div class="footter">
+                    <ul class="footter__list">
+                        <li class="footter__item"><a href="#" class="footter__link"><h2 class="footter__heading">Contact Us</h2></a></li>
+                        <li class="footter__item"><a href="#" class="footter__link">Bellway Industrial Park</a></li>
+                        <li class="footter__item"><a href="#" class="footter__link">Embakasi Road Off Airport North Road</a></li>
+                        <li class="footter__item"><a href="#" class="footter__link">+254 724 383 856</a></li>
+                        <li class="footter__item"><a href="#" class="footter__link">info@evolvelogistics.net</a></li>
+                    </ul>
+
+                    <figure class="footer__img">
+                    <img src="../img/LOG4.jpg" alt="pic" class="footer__img-1" >
+                    </figure>
+
+                </div>
+           </div>
+           
+      
+    </main>
+    
+    </div> 
+    
+</body>
+</html>

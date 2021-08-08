@@ -1,0 +1,54 @@
+ .header {
+        height: 95vh;
+        background-image: linear-gradient(to right bottom, $color-primary-light-2, $color-primary-dark-2),
+        url(../img/LOG1.jpg);
+        background-size: cover;
+        background-position: center;
+        position: relative;
+
+     //media query for responsive background images. the ',' means or
+     @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+     only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+     //because the above doesn't work on safari
+     only screen and (min-width: 125em) {
+         //125em is 2000px and 37.5em is 600px
+         background-image: linear-gradient(to right bottom, $color-primary-light-2, $color-primary-dark-2),
+         url(../img/LOG1.jpg);
+
+    
+         
+     }
+
+     -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+     clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+
+     
+
+
+     @include  respond(phone){
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+     }
+     
+
+
+     /*cuts ratiolly in the shape you want. check out bennettfeely.com/clippy/*/
+     &__logo-box {
+         position: absolute;
+         top: 0rem;
+         left: 0rem;
+         /*logo-box class, define attributes of logo box, position attributes*/
+     }
+
+     &__logo {
+         height: 12rem;
+         /*logo class, defines attributes of the logo itself*/
+         animation: moveInLeft .1s ease-out;
+     }
+
+     &__text-box {
+        @include posit;//mmixin of positioning
+         /*the above is in relation to the parent element*/
+         text-align: center;
+     }
+ }

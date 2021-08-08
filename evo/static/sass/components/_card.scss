@@ -1,0 +1,206 @@
+//functionality
+.card {
+    perspective: 80rem; //how image looks like its coming towards the user
+    -moz-perspective: 80rem;
+    height: 34rem;
+
+ 
+    &__side{
+        
+        height: 37rem;
+        transition: all 1s ease;//how animations happen
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;//fix for absolute positioning
+        -webkit-backface-visibility: hidden;//for safari
+        backface-visibility: hidden;//you can't see through the card 
+        border-radius: 3px;//gives card curves 
+        overflow: hidden;//brings back the curve after overflowing picture
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .7);
+
+    &--front{
+        background-color: $color-white;
+    }
+    &--back{
+        
+        transform: rotateY(180deg);
+        &-1{
+            background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+        }
+
+        &-2 {
+             background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark); 
+        }
+        &-3 {
+              background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark); 
+        }
+        }
+    }
+
+    &:hover &__side--front {
+        transform: rotateY(-180deg);
+    }
+
+    &:hover &__side--back {
+        transform: rotateY(0deg);
+    }
+    //frontside styling
+    
+    &__picture {
+        background-size: cover;
+        height: 24rem;
+        background-blend-mode: color; //makes gradient blend with image
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+     
+        &--1{
+            background-image:linear-gradient(to right bottom, $color-secondary-light-2, $color-secondary-dark-2), url(../img/air.jpg);
+        }
+         &--2 {
+         background-image:linear-gradient(to right bottom, $color-primary-light-2, $color-primary-dark-2),url(../img/index8.png);
+        }
+        &--3 {
+          background-image:linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark), url(../img/rail1.jpg);
+        }
+        &--4 {
+            background-image: linear-gradient(to right bottom, $color-primary-light-2, $color-primary-dark-2), url(../img/competition.png);
+        }
+        &--5 {
+            background-image: linear-gradient(to right bottom, $color-primary-light-2, $color-primary-dark-2), url(../img/ship3.jpg);
+        }
+    }
+    &__heading {
+        font-size: 2.8rem;
+        text-align: left;
+        text-transform: uppercase;
+        font-weight: 300;
+        position: absolute;
+        color: $color-white;
+        top: 15rem;
+        right: 2rem;
+        width: 55%;
+        margin-right: 2rem;
+
+    }
+    &__heading-span {
+        padding: .5rem .5rem;
+        -webkit-box-decoration-break: clone;//applies all decorations in the selector even when words move to a new line
+        box-decoration-break: clone;
+        &--1{
+            display: inline-block;
+            background-image:linear-gradient(to right bottom, rgba($color-secondary-light, .8) , rgba($color-secondary-dark, .8));
+        }
+         &--2{
+            display: inline-block;
+            background-image:linear-gradient(to right bottom, rgba($color-primary-light-2, .7), rgba($color-primary-dark-2, .7));
+        } 
+        &--3 {
+            display: inline-block;
+            background-image: linear-gradient(to right bottom, rgba($color-tertiary-light, .8), rgba($color-tertiary-dark, .8));
+         }
+         &--4 {
+             display: inline-block;
+             background-image: linear-gradient(to right bottom, rgba($color-primary-light-2, .7), rgba($color-primary-dark-2, .7));
+         }
+         &--5 {
+             display: inline-block;
+             background-image: linear-gradient(to right bottom, rgba($color-primary-light-2, .7), rgba($color-primary-dark-2, .7));
+         }
+
+      
+    }
+    &__details{
+        padding: 3rem;
+        
+        ul{
+            list-style: none;
+            width: 80%;
+            margin: 0 auto;//centering list
+            li{
+                text-align: center;
+                font-size: 1.5rem;
+                padding: 1rem;
+                &:not(:last-child){
+                    border-bottom: 1px solid $color-grey-light-2;
+                }
+            }
+        }
+    }
+    //Backside styling
+    &__cta {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+        width: 90%;
+    }
+    &__price-box{
+        text-align: center;
+        color: $color-white;
+        margin-bottom: 8rem;
+    }
+    &__price-only{
+        font-size: 1.5rem;
+        text-transform: uppercase; 
+    }
+    &__price-value{
+        font-size: 6rem;
+        font-weight: 100;
+    }
+
+    //@include respond (tab-port) {
+        @media only screen and(max-width: 56.25em),
+         only screen and (hover:none){ //happens when screen is touch and hover doesn't exist
+           height: auto;
+           border-radius: 3px; //gives card curves 
+            background-color: $color-white;
+            box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+
+           &__side {
+                box-shadow: none;
+               height: auto; 
+               position: relative;
+               
+               &--back {
+                   transform: rotateY(0);
+                   clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+               }
+           }
+
+           &:hover &__side--front {
+               transform: rotateY(0);
+           }
+           &__details {
+               padding: 0 1rem;
+           }
+
+           //Backside styling
+           &__cta {
+               position: relative;
+               top: 0;
+               left: 0;
+               transform: translate(0);
+               width: 100%;
+               padding: 7rem 4rem 4rem 4rem;
+           }
+
+           &__price-box {
+               margin-bottom: 3rem;
+           }
+
+           &__price-value {
+               font-size: 4rem;
+               font-weight: 100;
+           }
+    }
+
+}
+
+    /* position: absolute;
+        top: 0;
+        left: 0;
+        width: 10%0;*/

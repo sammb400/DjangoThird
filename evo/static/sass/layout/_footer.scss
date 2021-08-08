@@ -1,0 +1,87 @@
+.footer{
+    background-color: $color-grey-dark-3;
+    padding: 10rem 0;
+    font-size: 1.4rem ;
+    color: $color-grey-light-1;
+
+    &__heading {
+        color: $color-primary-light;
+        font-size: 2rem;
+    }
+    @include respond (tab-port) {
+        padding: 8rem 0;
+    }
+
+    &__logo{
+        width: 40rem;
+        height: auto;
+    }
+    &__logo-box{
+        text-align: center;
+        margin-bottom: 8rem;
+        @include respond (tab-port) {
+            margin-bottom: 5rem;
+        }
+    }
+    &__list {
+        list-style: none;//removes dots in lists
+    }
+    &__item {
+         display: inline-block;//arranges them in a line
+         &:not(:last-child){
+             margin-right: 1.5rem;//gives margin to all apart from the last child
+         }
+    }
+    &__item1 {
+        display: block; //arranges them in a line
+        
+        &:not(:first-child) {
+            margin-top: 1rem;
+        }
+        
+    }
+    &__link {
+        &,
+        &:link,
+        &:visited{
+            color: $color-grey-light-1;
+            background-color: $color-grey-dark-3;
+            text-decoration: none;//removes preset styles of the link
+            text-transform: uppercase;
+            display: inline-block;
+            transition: all .2s;
+        }
+
+        &:hover,
+        &:active{//means clicked
+            color: $color-primary;
+            transform: rotate(5deg) scale(1.3); 
+
+            box-shadow: 0 1rem 3rem rgba($color-black, .4);
+            
+        }
+    }
+    &__navigation{
+        border-top: 2px solid $color-grey-dark;
+        padding-top: 2rem;
+        display: inline-block;
+        @include respond (tab-port) {
+            width: 100%;
+            text-align: center;
+        }
+    }
+    
+    &__copyright {
+         border-top: 2px solid $color-grey-dark;
+         padding-top: 2rem;
+         width: 80%;
+         float: right;
+
+         @include respond (tab-port) {
+             width: 100%;
+             text-align: center;
+             float: none;
+         }
+    }
+
+}
