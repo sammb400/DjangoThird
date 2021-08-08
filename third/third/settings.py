@@ -98,7 +98,8 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.NumericPassword'
+        'Validator',
     },
 ]
 
@@ -122,9 +123,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-#autofield
+# autofield
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
-#crispy forms
-CRISPY_TEMPLATE_PACK="bootstrap4"
-    
+# crispy forms
+CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+LOGIN_REDIRECT_URL = "/"
+
+LOGOUT_REDIRECT_URL = "/"
+
+STATIC_URL = '/static/'

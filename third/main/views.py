@@ -11,21 +11,6 @@ def home(response):
     return render (response, "main/home.html", {})
 
 
-def create(response):
-    if response.method == "POST":
-        form = CreatesNewList(response.POST)
-
-        if form.is_valid():
-            n = form.cleaned_data["name"]
-            t = ToDoList(name = n)
-            t.save()
-        return HttpResponseRedirect ("/%s" %t.id)
-
-    else:
-        form = CreatesNewList()
-
-
-    return render (response, "main/create.html", {"form":form})
 
 
 def spe(response, id):
@@ -33,16 +18,16 @@ def spe(response, id):
 
     if response.method == "POST":
         print (response.POST)
-        #saving an item
+                    #saving an item
         if response.POST.get("save"):
             for item in ls.item_set.all():
                 if response.POST.get("c" + str(item.id)) == "clicked":
                     item.complete = True
                 else:
                     item.complete = False
-                item.save()
+                    item.save()
 
-        #adding an new item
+                    #adding an new item
         elif response.POST.get("newItem"):
             txt = response.POST.get("new")
 
@@ -53,3 +38,29 @@ def spe(response, id):
 
 
     return render (response, "main/list.html", {"ls":ls})
+    
+
+
+def view(response):
+    return render (response, "main/view.html", {})
+
+
+def create(response): 
+    t = None
+    if response.method == "POST":
+        form = CreatesNewList(response.POST)
+
+        if form.is_valid():
+            n = form.cleaned_data["name"]
+            t = ToDoList(name=n)
+            t.save()
+
+            return HttpResponseRedirect ("/%i" %t.id)
+        else:
+            return HttpResponseRedirect("/view")
+
+    else:      
+        form = CreatesNewList()
+
+
+    return render (response, "main/create.html", {"form":form})
