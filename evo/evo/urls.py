@@ -17,10 +17,16 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from evolve import views
+from django.conf.urls import url
+from django.views.static import serve 
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('evolve.urls')),
+    path('down/', views.down),
+    url(r'^download/(?p<path>.*)$', serve, {'document_root':settings.MEDIA_ROOT}),
 ]
 
 if settings.DEBUG:

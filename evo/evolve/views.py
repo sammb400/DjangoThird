@@ -4,34 +4,18 @@ from django.http import FileResponse
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import letter
 from .forms import UploadFileForm
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 import mimetypes
-
+import os
+from .models import FilesAdmin, Doc
 
 # Create your views here.
 def ev(response):
     return render(response, 'evo/index.html', {})
 
 
-def some_view(request):
-    #create bytestream buffer
-    buffer = io.BytesIO()
-    #create canvas
-    p = canvas.Canvas(buffer, pagesize=letter)
-    #create text object
-    p.drawString(100,500, "Doc exercise")
-    #finish up
-    p.showPage()
-    p.save()
-    buffer.seek(0)
-    return FileResponse(buffer, as_attachment=True, filename='receipts.pdf')
 
-
-def upload(response):
-    return render(response, 'evo/uploadin.html', {})
-
-
-# uploading file
+# uploading file through webpage
 def upload_file(request):
     if request.method == 'POST':
         form = UploadFileForm(request.POST, request.FILES)
@@ -51,3 +35,19 @@ def handle_uploaded_file(f):
 
 
 
+#upload file through admin dashboard
+def down(request):
+    context = {'file':FilesAdmin.objects.all()}
+    return render(request, 'evo/down.html', context)
+
+
+#download file
+def download (request, path):
+    file_path =  os.path.join(settings.MEDIA_ROOT, path)
+    if os.path.exists(file_path):
+        with open(file_path, 'rb') as fh:
+            response =  HttpResponse (fh.read(), content_type="application/adminupload")
+            response['Content-Disposition']='inline;filename='+os.path.basename(file_path)
+            return response
+
+    raise Http404

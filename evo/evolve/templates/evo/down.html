@@ -1,6 +1,4 @@
-{% load static %}
 <!DOCTYPE html>
-
 <html>
     <head>
         <meta charset="utf-8">
@@ -11,10 +9,11 @@
         <link rel="stylesheet" href="">
     </head>
     <body>
-        <a href=" {% url '' %} " >
-            <img src=" {{}} " alt="" class="">
-        </a>
-        
+    {% for post in file  %}
+        <h2 >{{post.title}}</h2>
+        <a href=" {{post.adminupload.url}} " download="{{post.adminupload.url}}" class="">Download</a>
+    {% endfor %}
+  
         <script src="" async defer></script>
     </body>
 </html>
