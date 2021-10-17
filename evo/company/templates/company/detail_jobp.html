@@ -1,0 +1,51 @@
+{% extends "team/base.html" %}
+
+
+{% block content %}
+    <h3>Current Job Plan</h3>
+        <table class="table table-borderless">
+            <thead class="border-bottom font-weight-bold">
+                <tr>
+                    <td>Full Name</td>
+                    <td>Date</td>
+                    <td>Customer</td>
+                    <td>Origin port</td>
+                    <td>Destination port </td>
+                    <td>Product</td>
+                    <td>Forwarder</td>
+                    <td>Clearing agent </td>
+                    <td>Marketer </td>
+                    <td>Buying </td>
+                    <td>Selling </td>
+                    <td>Margin </td>
+                    <td>Status </td>
+                    <td>Update/ Delete</td>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                        <td>{{object.name}}</td>
+                        <td>{{object.date}}</td>
+                        <td>{{object.customer}}</td>
+                        <td>{{object.origin_port}}</td>
+                        <td>{{object.destination_port}}</td>
+                        <td>{{object.product}}</td>
+                        <td>{{object.forwarder}}</td>
+                        <td>{{object.clearing_agent}}</td>
+                        <td>{{object.marketer}}</td>
+                        <td>{{object.buying}}</td>
+                        <td>{{object.selling}}</td>
+                        <td>{{object.margin}}</td>
+                        <td>{{object.status}}</td>
+                        {% if object.name == user %}
+                            <td> 
+                                <a href=" {% url 'job_p_update' object.id %} " class="btn text-primary px-0" > <i class="far fa-edit fa-ly"></i> </a> 
+                                <a href=" {% url 'job_p_delete' object.id %} " class="btn text-primary px-0" > <i class="fas fa-trash-alt fa-lg text-danger float-right"></i> </a> 
+                            </td>
+                        {% endif %}
+                        
+                    </tr>
+            </tbody>
+        </table>
+
+{% endblock content %}

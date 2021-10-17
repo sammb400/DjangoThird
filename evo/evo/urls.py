@@ -25,8 +25,11 @@ from django.views.static import serve
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('evolve.urls')),
+    path('reg/', include('reg.urls')),
+    path('comp/', include('company.urls')),
+    path('', include("django.contrib.auth.urls")),
     path('down/', views.down),
-    url(r'^download/(?p<path>.*)$', serve, {'document_root':settings.MEDIA_ROOT}),
+    
 ]
 
 if settings.DEBUG:

@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'evolve.apps.EvolveConfig',
     'crispy_forms',
+    'company',
+    'reg',
 ]
 
 MIDDLEWARE = [
@@ -78,12 +80,8 @@ WSGI_APPLICATION = 'evo.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'mydb',
-        'USER': 'myuser',
-        'PASSWORD': 'mypass',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -143,3 +141,8 @@ MEDIA_URL = '/media/'
 
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+LOGIN_URL = 'login'
+LOGOUT_URL = '/'
+LOGIN_REDIRECT_URL = 'job_p'
+LOGOUT_REDIRECT_URL = '/'

@@ -1,0 +1,9 @@
+{% extends "team/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <h1>{{user.username}}</h1>
+    <h1>{{user.position}}</h1>
+    
+    <img src="{{user.profile.image.url}}" class="rounded float-start" alt="This profile">
+    {{p_form|crispy}}
+{% endblock  %}

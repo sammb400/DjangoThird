@@ -1,0 +1,53 @@
+{% extends "team/base.html" %}
+
+{% block content %}
+    <h5>Are you sure you want to delete</h5>
+        <table class="table table-borderless">
+            <thead class="border-bottom font-weight-bold">
+                <tr>
+                    <td>Full Name</td>
+                    <td>Date</td>
+                    <td>Customer</td>
+                    <td>Origin port</td>
+                    <td>Destination port </td>
+                    <td>Product</td>
+                    <td>Forwarder</td>
+                    <td>Clearing agent </td>
+                    <td>Marketer </td>
+                    <td>Buying </td>
+                    <td>Selling </td>
+                    <td>Margin </td>
+                    <td>Status </td>
+                    <td>  </td>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                        <td>{{object.name}}</td>
+                        <td>{{object.date}}</td>
+                        <td>{{object.customer}}</td>
+                        <td>{{object.origin_port}}</td>
+                        <td>{{object.destination_port}}</td>
+                        <td>{{object.product}}</td>
+                        <td>{{object.forwarder}}</td>
+                        <td>{{object.clearing_agent}}</td>
+                        <td>{{object.marketer}}</td>
+                        <td>{{object.buying}}</td>
+                        <td>{{object.selling}}</td>
+                        <td>{{object.margin}}</td>
+                        <td>{{object.status}}</td>
+                        
+                            <td> 
+                                <a href=" {% url 'job_p' %} " class="btn btn-secondary" > Cancel </a> 
+                                <form action="  " method="POST" class="d-inline">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-danger"> Yes, Im sure </button>
+                                </form>
+                            </td>
+                    
+                        
+                    </tr>
+            </tbody>
+        </table>
+
+{% endblock content %}

@@ -1,0 +1,53 @@
+{% extends "team/base.html" %}
+
+{% block content %}
+    <h5>Are you sure you want to delete</h5>
+        <table class="table table-borderless">
+            <thead class="border-bottom font-weight-bold">
+                <tr>
+                    <td>Full Name</td>
+                    <td>Date</td>
+                    <td>File Ref No</td>
+                    <td>Account code no</td>
+                    <td>Marketer</td>
+                    <td>Director Name</td>
+                    <td>Director No</td>
+                    <td>Location</td>
+                    <td>Comodity</td>
+                    <td>Communication</td>
+                    <td>Travelling Acc</td>
+                    <td>Advertising </td>
+                    <td>Total </td>
+                    <td>  </td>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                        <td>{{object.name}}</td>
+                        <td>{{object.date}}</td>
+                        <td>{{object.file_ref_no}}</td>
+                        <td>{{object.account_code_no}}</td>
+                        <td>{{object.marketer}}</td>
+                        <td>{{object.director_name }}</td>
+                        <td>{{object.director_no}}</td>
+                        <td>{{object.location}}</td>
+                        <td>{{object.comodity}}</td>
+                        <td>{{object.communication}}</td>
+                        <td>{{object.travelling_accomodation}}</td>
+                        <td>{{object.advertising}}</td>
+                        <td>{{object.total }}</td>
+                        
+                            <td> 
+                                <a href=" {% url 'market_p' %} " class="btn btn-secondary" > Cancel </a> 
+                                <form action="  " method="POST" class="d-inline">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-danger"> Yes, Im sure </button>
+                                </form>
+                            </td>
+                    
+                        
+                    </tr>
+            </tbody>
+        </table>
+
+{% endblock content %}

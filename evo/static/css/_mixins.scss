@@ -1,0 +1,76 @@
+@mixin clearfix{
+    &::after{
+        content: "";//content makes it present, "" makes it invisible
+        display: table;//display tells how it will be viewed and answer is inform of a table 
+        clear: both;//clear gives float permision of both left and right
+    }
+}
+@mixin posit{//puts it in the absolute center
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+//Media Query Manager
+/*
+0-600px phones
+600-900px portrait tablet
+900-1200px landscape tablet
+1200-1600px where our normal styles apply
+1800+ px big desktops
+*/
+//1em = 16px
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media only screen and (max-width: 37.5em) {@content };//600/16
+    }
+     @if $breakpoint == tab-port {
+        @media only screen and(max-width: 56.25em) {@content };//900/16
+    }
+     @if $breakpoint == tab-land {
+        @media only screen and(max-width: 75em) {@content };//1200/16
+    }
+     @if $breakpoint == big-desk {
+        @media only screen and(min-width: 112.5em) {@content };//1800/16
+    }
+}
+
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  /*This is to set the box model so that the borders and the paddings are no longer added to the total height or width spesified for a box*/
+}
+
+
+html {
+    font-size: 62.5%;//1rem=10px, 10/16=62.5%
+   
+    @include respond (tab-land) {
+       font-size: 56%;//9px, 9/16=56%
+    }
+    @include respond (tab-port) {
+       font-size: 50%; //8px, 8/16=50%
+    }
+    @include respond (phone) {
+      font-size: 43%;//7px, 7/12=58%
+    }  
+    @include respond (big-desk) {
+        font-size: 75%;//12px, 12/16=75
+    }
+}
+
+body {
+   
+   box-sizing: inherit;
+   padding: 2rem;
+   
+   @include respond (tab-port) {
+   padding: 0;
+   }
+}
+

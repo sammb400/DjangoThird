@@ -1,0 +1,55 @@
+{% extends "team/base.html" %}
+
+{% block nav %}
+<li class="navigation__item"><a href="{% url 'job_p_create' %}" class="navigation__link">New Job Plan</a></li>
+
+{% endblock  %}
+
+{% block content %}
+    <h3>List of Job Plans</h3>
+    <div class="list"> 
+        <table class="table table-borderless">
+            <thead class=" new border-bottom font-weight-bold">
+                <tr>
+                    <td>Full Name</td>
+                    <td>Date</td>
+                    <td>Customer</td>
+                    <td>Origin port</td>
+                    <td>Destination port </td>
+                    <td>Product</td>
+                    <td>Forwarder</td>
+                    <td>Clearing agent </td>
+                    <td>Marketer </td>
+                    <td>Buying </td>
+                    <td>Selling </td>
+                    <td>Margin </td>
+                    <td>Status </td>
+                    <td> <a href=" {% url 'job_p_create' %} " class="btn btn-outline-success"> <i class="fas fa-plus"> </i> Add New</a> </td>
+                </tr>
+            </thead>
+            <tbody class="new">
+                {% for person in object_list %}
+                    <tr>
+                        <td>{{person.name}}</td>
+                        <td>{{person.date}}</td>
+                        <td>{{person.customer}}</td>
+                        <td>{{person.origin_port}}</td>
+                        <td>{{person.destination_port}}</td>
+                        <td>{{person.product}}</td>
+                        <td>{{person.forwarder}}</td>
+                        <td>{{person.clearing_agent}}</td>
+                        <td>{{person.marketer}}</td>
+                        <td>{{person.buying}}</td>
+                        <td>{{person.selling}}</td>
+                        <td>{{person.margin}}</td>
+                        <td>{{person.status}}</td>
+                        <td> 
+                            <a href=" {% url 'job_p_detail' person.id %} "  class="btn text-primary px-0" > <i class="far fa-edit fa-ly"></i> </a> 
+                            
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock content %}

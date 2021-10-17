@@ -1,0 +1,51 @@
+{% extends "team/base.html" %}
+
+
+{% block content %}
+    <h3>Current Market Plan</h3>
+        <table class="table table-borderless">
+            <thead class="border-bottom font-weight-bold">
+                <tr>
+                    <td>Full Name</td>
+                    <td>Date</td>
+                    <td>File Ref No</td>
+                    <td>Account code no</td>
+                    <td>Marketer</td>
+                    <td>Director Name</td>
+                    <td>Director No</td>
+                    <td>Location</td>
+                    <td>Comodity</td>
+                    <td>Communication</td>
+                    <td>Travelling Acc</td>
+                    <td>Advertising </td>
+                    <td>Total </td>
+                    <td>Update/ Delete</td>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                        <td>{{object.name}}</td>
+                        <td>{{object.date}}</td>
+                        <td>{{object.file_ref_no}}</td>
+                        <td>{{object.account_code_no}}</td>
+                        <td>{{object.marketer}}</td>
+                        <td>{{object.director_name }}</td>
+                        <td>{{object.director_no}}</td>
+                        <td>{{object.location}}</td>
+                        <td>{{object.comodity}}</td>
+                        <td>{{object.communication}}</td>
+                        <td>{{object.travelling_accomodation}}</td>
+                        <td>{{object.advertising}}</td>
+                        <td>{{object.total }}</td>
+                        {% if object.name == user %}
+                            <td> 
+                                <a href=" {% url 'market_p_update' object.id %} " class="btn text-primary px-0" > <i class="far fa-edit fa-ly"></i> </a> 
+                                <a href=" {% url 'market_p_delete' object.id %} " class="btn text-primary px-0" > <i class="fas fa-trash-alt fa-lg text-danger float-right"></i> </a> 
+                            </td>
+                        {% endif %}
+                        
+                    </tr>
+            </tbody>
+        </table>
+
+{% endblock content %}

@@ -1,0 +1,18 @@
+{% extends "team/base.html" %}
+
+
+{% load crispy_forms_tags %}
+{% block heading %}<h4>Login</h4>{% endblock  %}
+{% block content %}
+    <form action="" class="form-group" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form|crispy}}
+    <br>
+    <div class="d-flex justify-content-between mb-3">
+        <button class="btn btn-outline-success">Login</button>
+        <p class="">Don't have an account ? Create one <a href="{% url 'register' %} " class="btn btn-outline-primary">Here</a></p>
+        
+    </div>
+    
+    </form>
+{% endblock  %}
