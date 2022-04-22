@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.shortcuts import render
 import io
 from django.http import FileResponse
